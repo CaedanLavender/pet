@@ -1,0 +1,116 @@
+.callToActionSuper {
+   width: 100%;
+   background-color: var(--mellow);
+   display: flex;
+   justify-content: center;
+}
+
+.callToAction {
+   text-align: center;
+   text-transform: uppercase;
+   padding: 0.4em;
+   font-family: 'Futura';
+   font-weight: 500;
+   width: 100%;
+   max-width: var(--max-content);
+   position: relative;
+}
+
+
+span.bold {
+   font-weight: 700;
+   text-decoration: underline;
+}
+
+div.dismiss {
+   display: inline-block;
+   position: absolute;
+   right: 230px;
+   top: 0;
+   text-transform: lowercase;
+   font-size: 1.4rem;
+   user-select: none;
+   cursor: pointer;
+}
+
+header {
+   background-color: white;
+   position: sticky;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 100%;
+   box-shadow: #7a7a7a1a -4px 9px 25px -6px;
+}
+
+.headerInner {
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   max-width: var(--max-content);
+}
+
+nav {
+   display: flex;
+   justify-content: space-between;
+   height: 88px;
+}
+
+nav aside .logo {
+   position: relative;
+   bottom: -16px;
+   background-color: white;
+   box-shadow: #0000001a 4px 9px 25px -6px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100px;
+   width: 100px;
+   border-radius: 500px;
+   -webkit-border-radius: 500px;
+   -moz-border-radius: 500px;
+   -ms-border-radius: 500px;
+   -o-border-radius: 500px;
+}
+
+nav aside {
+   width: 200px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 1.5em;
+}
+
+nav ul {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   list-style: none;
+   padding: 0;
+   /* gap: 1em; */
+}
+
+nav ul li {
+   padding: 0.5em 1.5em;
+   font-size: 18px;
+   text-transform: uppercase;
+   font-family: 'Futura';
+   font-weight: 500;
+   border: 1px solid transparent;
+   transition: border 100ms ease-in-out;
+   border-radius: 500px;
+   -webkit-border-radius: 500px;
+   -moz-border-radius: 500px;
+   -ms-border-radius: 500px;
+   -o-border-radius: 500px;
+   user-select: none;
+   cursor: pointer;
+   -webkit-transition: border 100ms ease-in-out;
+   -moz-transition: border 100ms ease-in-out;
+   -ms-transition: border 100ms ease-in-out;
+   -o-transition: border 100ms ease-in-out;
+}
+
+nav ul li:hover {
+   border-color: var(--red);
+}
