@@ -1,3 +1,13 @@
 .App {
-  text-align: center;
+   text-align: center;
 }
+
+* {
+   --red: #DE1E32;
+   --gray: #B9B3B8;
+   --black: #39363C;
+   --blue: #016592;
+   --mellow: #FFC74E;
+   --orange: #FEAC29;
+}
+
