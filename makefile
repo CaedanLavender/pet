@@ -6,8 +6,10 @@
 #  ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝╚══════╝╚══════╝
 #           
 
-build-local:
-	cd api && npm start
+build-api:
+	cd api && npm run develop
+
+build-client:
 	npm start
 
 update-packages:
