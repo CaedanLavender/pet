@@ -8,10 +8,12 @@ function App() {
       <div className="App">
          <BrowserRouter>
             <Header />
-            <Routes>
-               <Route exact path="/" element={ <span>Mock home page</span> } />
-               <Route exact path="/search" element={ <span>Mock home search</span> } />
-            </Routes>
+            <div className="bodyContainer">
+               <Routes>
+                  <Route exact path="/" element={<span>Mock home page</span>} />
+                  <Route exact path="/search" element={<span>Mock home search</span>} />
+               </Routes>
+            </div>
             <Footer />
          </BrowserRouter>
       </div>
