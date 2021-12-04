@@ -1,5 +1,5 @@
 import '../styles/Footer.css'
-import { ReactComponent as FacebookLogo} from '../assets/Facebook.svg'
+import { ReactComponent as FacebookLogo} from '../assets/FB.svg'
 import { ReactComponent as InstaLogo } from '../assets/Insta.svg'
 import{ ReactComponent as YouTubeLogo } from '../assets/YouTube.svg'
 
@@ -57,7 +57,7 @@ const Footer = () => {
                   <br/>
                   <br/>
                   <p>Subscribe to Our Newsletter</p>
-                  <input type="text" placeholder="Your Email Address " />
+                  <input type="text" placeholder="Your Email Address         ➜" />
                </div>
             </footer>
          </div>
