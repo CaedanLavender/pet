@@ -1,0 +1,57 @@
+.blueDiv {
+  width: 100%;
+  background-color: var(--blue);
+  height: 331px;
+  color: white;
+}
+
+footer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footerItems {
+  text-align: justify;
+}
+
+footer p {
+  margin-top: 40px;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+footer ul {
+  list-style: none;
+  padding-left: 0px;
+  font-size: 14px;
+  line-height: 30px;
+}
+
+footer ul li:hover {
+  text-decoration: underline;
+  text-decoration-color: blue;
+}
+
+.icon {
+    margin-right: 15px;
+}
+
+
+.mellowDiv {
+  width: 100%;
+  background-color: var(--mellow);
+  height: 31.2px;
+}
+
+footer input {
+  background: #ffffff;
+  border: 1px solid #b9b3b8;
+  box-sizing: border-box;
+  border-radius: 5px;
+  height: 38px;
+  width: 246px;
+  color: #b9b3b8;
+  font-size: 16px;
+  line-height: 21px;
+  text-align-last: center;
+}
