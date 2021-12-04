@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { ReactComponent as PetLogo } from '../assets/pet-logo.svg'
 import { ReactComponent as AccountLogo } from '../assets/account.svg'
 import { ReactComponent as CartLogo } from '../assets/cart.svg'
+import { Link } from 'react-router-dom'
 
 
 const Header = () => {
@@ -55,7 +56,7 @@ const Header = () => {
       <header>
          <div className={`callToActionSuper ${bannerIsOpen || 'gone'}`}>
             <div className="callToAction">
-               we're open for all your pet needs | <span className='bold'>more {poshMode?"Spanish Flu":"covid-19"} info here</span>
+               we're open for all your pet needs | <span className='bold'>more {poshMode ? "Spanish Flu" : "covid-19"} info here</span>
                <div className='dismiss' onClick={toggleBanner}>x</div>
             </div>
          </div>
@@ -69,13 +70,19 @@ const Header = () => {
                <ul>
                   {
                      navigationLinks.map((item) => (
-                        <li>{poshMode?item.posh:item.title}</li>
-                        ))
-                     }
+                        <Link to="/">
+                           <li>{poshMode ? item.posh : item.title}</li>
+                        </Link>
+                     ))
+                  }
                </ul>
                <aside>
+                  <Link to="/account">
                      <AccountLogo />
+                  </Link>
+                  <Link to="/cart">
                      <CartLogo />
+                  </Link>
                </aside>
             </nav>
          </div>
