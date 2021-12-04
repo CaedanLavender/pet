@@ -36,6 +36,7 @@ div.dismiss {
 header {
    background-color: white;
    position: sticky;
+   top: 0;
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -87,17 +88,15 @@ nav ul {
    justify-content: space-between;
    list-style: none;
    padding: 0;
-   /* gap: 1em; */
+   font-family: 'Futura';
 }
 
 nav ul li {
    padding: 0.5em 1.5em;
    font-size: 18px;
    text-transform: uppercase;
-   font-family: 'Futura';
    font-weight: 500;
    border: 1px solid transparent;
-   transition: border 100ms ease-in-out;
    border-radius: 500px;
    -webkit-border-radius: 500px;
    -moz-border-radius: 500px;
@@ -105,6 +104,7 @@ nav ul li {
    -o-border-radius: 500px;
    user-select: none;
    cursor: pointer;
+   transition: border 100ms ease-in-out;
    -webkit-transition: border 100ms ease-in-out;
    -moz-transition: border 100ms ease-in-out;
    -ms-transition: border 100ms ease-in-out;
@@ -112,5 +112,5 @@ nav ul li {
 }
 
 nav ul li:hover {
-   border-color: var(--red);
+   border-color: var(--blue);
 }
