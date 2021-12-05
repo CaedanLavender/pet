@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Product from './components/Product';
 import Cart from './components/Cart';
 import Account from './components/Account';
+import Dog from './components/Dog';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
                <Routes>
                   <Route exact path="/" element={<span>Mock home page</span>} />
                   <Route path="/search" element={<span>Mock home search</span>} />
+                  <Route path="/dog" element={<Dog />}/>
                   <Route path="/cart" element={ <Cart /> } />
                   <Route path="/product" element={ <Product /> } />
                   <Route path="/account" element={ <Account /> } />
