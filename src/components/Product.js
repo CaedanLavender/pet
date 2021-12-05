@@ -1,7 +1,25 @@
-import { useParams } from 'react-router-dom'
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
-const Product = ({ match }) => {
+const Product = () => {
    const {id} = useParams();
+
+   const [product, setProduct] = useState({});
+
+   const getProduct = () => {
+      axios.get("http://localhost:5000/product/" + id)
+      .then((response) => {
+         console.log(response)
+      })
+      .catch(() => {
+         console.log("There was an error")
+      })
+   }
+
+   useEffect(() => {
+      getProduct();
+   }, []);
 
    return (
       <>
