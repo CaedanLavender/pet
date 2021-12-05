@@ -20,7 +20,7 @@ function App() {
                   <Route path="/search" element={<span>Mock home search</span>} />
                   <Route path="/dog" element={<Dog />}/>
                   <Route path="/cart" element={ <Cart /> } />
-                  <Route path="/product" element={ <Product /> } />
+                  <Route path="/product/:id" element={ <Product /> } />
                   <Route path="/account" element={ <Account /> } />
                </Routes>
             </div>
