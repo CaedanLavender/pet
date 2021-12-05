@@ -23,6 +23,13 @@
    background-repeat: no-repeat;
    background-size: cover;
    background-position: 0px 0px;
+   display: flex;
+   justify-content: center;
+}
+
+.bodyInner {
+   width: 100%;
+   max-width: var(--max-content);
 }
 
 .invisible {

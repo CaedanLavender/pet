@@ -14,15 +14,17 @@ function App() {
       <div className="App" >
          <BrowserRouter>
             <Header />
-            <div className="bodyContainer" >
-               <Routes>
-                  <Route exact path="/" element={<span>Mock home page</span>} />
-                  <Route path="/search" element={<span>Mock home search</span>} />
-                  <Route path="/dog" element={<Dog />}/>
-                  <Route path="/cart" element={ <Cart /> } />
-                  <Route path="/product/:id" element={ <Product /> } />
-                  <Route path="/account" element={ <Account /> } />
-               </Routes>
+            <div className="bodyContainer">
+               <div className="bodyInner" >
+                  <Routes>
+                     <Route exact path="/" element={<span>Mock home page</span>} />
+                     <Route path="/search" element={<span>Mock home search</span>} />
+                     <Route path="/dog" element={<Dog />}/>
+                     <Route path="/cart" element={ <Cart /> } />
+                     <Route path="/product/:id" element={ <Product /> } />
+                     <Route path="/account" element={ <Account /> } />
+                  </Routes>
+               </div>
             </div>
             <Footer />
          </BrowserRouter>
