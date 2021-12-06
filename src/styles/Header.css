@@ -82,6 +82,16 @@ nav aside {
    gap: 1.5em;
 }
 
+nav aside:first-of-type {
+   justify-content: flex-start;
+   padding-left: 2em;
+}
+
+nav aside:last-of-type {
+   justify-content: flex-end;
+   padding-right: 2em;
+}
+
 nav ul {
    display: flex;
    align-items: center;

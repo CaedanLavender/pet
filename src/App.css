@@ -6,6 +6,8 @@
 }
 
 * {
+   box-sizing: border-box;
+   font-family: 'Futura', sans-serif;
    /* COLORS */
    --red: #DE1E32;
    --gray: #B9B3B8;
@@ -19,7 +21,7 @@
 
 .bodyContainer {
    flex: 100%;
-   background-image: url(./assets/Ornaments.svg);
+   background-image: url("./assets/Ornaments.svg");
    background-repeat: no-repeat;
    background-size: cover;
    background-position: 0px 0px;
@@ -29,6 +31,7 @@
 
 .bodyInner {
    width: 100%;
+   padding: 180px 4em;
    max-width: var(--max-content);
 }
 
