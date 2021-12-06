@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import '../styles/Product.css'
 
 const Product = () => {
    const {id} = useParams();
@@ -11,10 +12,12 @@ const Product = () => {
       axios.get("http://localhost:5000/product/" + id)
       .then((response) => {
          console.log(response)
+         setProduct(response.data)
       })
       .catch(() => {
          console.log("There was an error")
       })
+      console.log(product)
    }
 
    useEffect(() => {
@@ -23,9 +26,15 @@ const Product = () => {
 
    return (
       <>
-         <h1>Product page</h1>
-         <p>Content goes here</p>
-         <p>{id}</p>
+         <div className="bannerContainer">
+            <div className='bannerPositioner'>
+               <div className="bannerTitle whiteLabel">The Doge House</div>
+            </div>
+            <div className="pageBanner dogBanner"></div>
+            <div className="bannerPositioner">
+               <div className="breadCrumb whiteLabel"><span className='breadCrumbFaint'>Home / The Doge House / Food / Edibles: Dry /&nbsp;</span>{product.Product}</div>
+            </div>
+         </div>
       </>
    )
 }

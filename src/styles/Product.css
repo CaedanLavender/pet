@@ -1,0 +1,65 @@
+.bannerContainer {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+}
+
+.dogBanner {
+   background-image: url('../assets/dog.png');
+   background-repeat: no-repeat;
+   background-size: cover;
+   /* background-position-y: -400px; */
+   background-position: center;
+   box-shadow: #0000001a 4px 9px 25px -6px;
+}
+
+.bannerPositioner {
+   position: absolute;
+   width: 100%;
+}
+
+.bannerPositioner:first-of-type {
+   top: -30px;
+}
+
+.bannerPositioner:last-of-type {
+   bottom: -30px;
+}
+
+.whiteLabel {
+   display: flex;
+   align-items: center;
+   background-color: white;
+   padding: 0 2em;
+   border-radius: 30px;
+   height: 60px;
+   -webkit-border-radius: 30px;
+   -moz-border-radius: 30px;
+   -ms-border-radius: 30px;
+   -o-border-radius: 30px;
+   box-shadow: #0000001a 4px 9px 25px -6px;
+}
+
+.bannerTitle {
+   font-size: 24px;
+   margin: 0 40px;
+   width: fit-content;
+}
+
+
+.pageBanner {
+   height: 120px;
+   border-radius: 30px;
+   -webkit-border-radius: 30px;
+   -moz-border-radius: 30px;
+   -ms-border-radius: 30px;
+   -o-border-radius: 30px;
+}
+
+.breadCrumb {
+   margin: 0 100px;
+}
+
+.breadCrumb .breadCrumbFaint {
+   color: var(--gray);
+}
