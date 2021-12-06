@@ -42,3 +42,7 @@
 .gone {
    display: none !important;
 }
+
+.strikeOut {
+   text-decoration: line-through;
+}

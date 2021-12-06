@@ -25,7 +25,8 @@ const Product = () => {
    }, []);
 
    return (
-      <>
+      <div className='pageContainer'>
+         {/* BANNER */}
          <div className="bannerContainer">
             <div className='bannerPositioner'>
                <div className="bannerTitle whiteLabel">The Doge House</div>
@@ -35,20 +36,40 @@ const Product = () => {
                <div className="breadCrumb whiteLabel"><span className='breadCrumbFaint'>Home / The Doge House / Food / Edibles: Dry /&nbsp;</span>{product.Product}</div>
             </div>
          </div>
+
+         {/* PRODUCT */}
          <div className='productContainer'>
+
+            {/* COLUMN 1 */}
             <div className='productPart'>
-               <div className="productCard">Image</div>
+               <div className="productPrimary productCard">
+                  <img src={`/images/products/${product._id}--primary.webp`} />
+               </div>
                <div className="productTripletSuper">
                   <div className="productTriplet productCard">1</div>
                   <div className="productTriplet productCard">2</div>
                   <div className="productTriplet productCard">3</div>
                </div>
             </div>
+
+            {/* COLUMN 2 */}
             <div className='productPart'>
-               the other
+               <h1>{product.Product}</h1>
+               <span className='subtitle'>{product.Brand}</span>
+               <div className='productStars'>
+                  * * * * *
+                  <a href="#" >27 Reviews</a></div>
+               <div className='productPriceContainer'>
+                  <span className={`productPrice ${product['Sale Price'] && 'strikeOut'}`}>
+                     ${product.Price}
+                  </span>
+                  <span className='productPrice--sale'>
+                     ${product['Sale Price']}
+                  </span>
+               </div>
             </div>
          </div>
-      </>
+      </div>
    )
 }
 
