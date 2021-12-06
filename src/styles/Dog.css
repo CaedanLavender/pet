@@ -1,0 +1,106 @@
+.mainDogBanner {
+  background-image: url("../assets/mainDog.png");
+  box-shadow: #0000001a 4px 9px 25px -6px;
+  border-radius: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.dogBanner2 {
+  height: 244px;
+}
+
+.ourStore {
+  margin-top: -32px;
+  width: 42%;
+  position: relative;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+
+}
+
+.searchLabel {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  text-align-last: left;
+  justify-content: space-evenly;
+  background-color: white;
+  padding: 0.8em 2.5em 1.2em;
+  border-radius: 30px;
+  width: 80%;
+  height: 180px;
+  box-shadow: #0000001a 4px 9px 25px -6px;
+  margin-top: -38px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.selectBoxLarge {
+  width: 246px;
+  height: 38px;
+  border: 1px solid #39363c;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-right: 2em;
+}
+
+.selectBoxSml {
+  width: 152px;
+  height: 38px;
+  border: 1px solid #39363c;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-right: 2em;
+
+}
+
+label {
+  font-size: 14px;
+}
+
+.search {
+  width: 160px;
+  height: 42px;
+  margin-top: auto;
+  background: #feac29;
+  border-radius: 50px;
+  border: none;
+  text-align-last: center;
+  font-size: 18px;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.search::placeholder {
+  color: #ffffff;
+}
+
+.sort label {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.sort select {
+  width: 80%;
+  font-size: 16px;
+  height: 38px;
+  border: 1px solid #39363c;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.sort {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 3em 8em;
+}

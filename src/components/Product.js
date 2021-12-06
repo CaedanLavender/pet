@@ -31,9 +31,9 @@ const Product = () => {
                <div className="bannerTitle whiteLabel">The Doge House</div>
             </div>
             <div className="pageBanner dogBanner"></div>
-            <div className="bannerPositioner">
+            {/* <div className="bannerPositioner"> */}
                <div className="breadCrumb whiteLabel"><span className='breadCrumbFaint'>Home / The Doge House / Food / Edibles: Dry /&nbsp;</span>{product.Product}</div>
-            </div>
+            {/* </div> */}
          </div>
       </>
    )

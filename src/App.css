@@ -1,44 +1,45 @@
 .App {
-   text-align: center;
-   display: flex;
-   flex-direction: column;
-   min-height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 * {
-   box-sizing: border-box;
-   font-family: 'Futura', sans-serif;
-   /* COLORS */
-   --red: #DE1E32;
-   --gray: #B9B3B8;
-   --black: #39363C;
-   --blue: #016592;
-   --mellow: #FFC74E;
-   --orange: #FEAC29;
-   /* SIZES */
-   --max-content: 1440px;
+  box-sizing: border-box;
+  font-family: "Futura", sans-serif;
+  /* COLORS */
+  --red: #de1e32;
+  --gray: #b9b3b8;
+  --black: #39363c;
+  --blue: #016592;
+  --mellow: #ffc74e;
+  --orange: #feac29;
+  /* SIZES */
+  --max-content: 1440px;
 }
 
 .bodyContainer {
-   flex: 100%;
-   background-image: url("./assets/Ornaments.svg");
-   background-repeat: no-repeat;
-   background-size: cover;
-   background-position: 0px 0px;
-   display: flex;
-   justify-content: center;
+  flex: 100%;
+  background-image: url("./assets/Ornaments.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0px 0px;
+  display: flex;
+  justify-content: center;
 }
 
 .bodyInner {
-   width: 100%;
-   padding: 180px 4em;
-   max-width: var(--max-content);
+  width: 100%;
+  padding: 180px 4em;
+  max-width: var(--max-content);
 }
 
 .invisible {
-   visibility: hidden;
+  visibility: hidden;
 }
 
 .gone {
-   display: none !important;
+  display: none !important;
 }
+
