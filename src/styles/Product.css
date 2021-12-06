@@ -1,3 +1,10 @@
+.pageContainer {
+   display: flex;
+   flex-direction: column;
+   gap: 50px;
+   text-align: left;
+}
+
 .bannerContainer {
    position: relative;
    display: flex;
@@ -62,4 +69,92 @@
 
 .breadCrumb .breadCrumbFaint {
    color: var(--gray);
+}
+
+/* PRODUCT */
+
+.productContainer {
+   margin: 50px 100px;
+   display: flex;
+   gap: 4em;
+}
+
+.productPart {
+   display: flex;
+   flex: 100%;
+   flex-direction: column;
+   gap: 1em;
+}
+
+.productCard {
+   background-color: white;
+   border-radius: 25px;
+   box-shadow: #7a7a7a1a -4px 9px 25px 6px;
+   padding: 2em;
+   -webkit-border-radius: 25px;
+   -moz-border-radius: 25px;
+   -ms-border-radius: 25px;
+   -o-border-radius: 25px;
+}
+
+.productPrimary {
+   width: 100%;
+   height: 500px;
+   padding: 3em;
+}
+
+.productPrimary img {
+   width: 100%;
+}
+
+.productTripletSuper {
+   display: flex;
+   gap: 1em;
+}
+
+.productTriplet {
+   flex: 100%;
+   height: 150px;
+}
+
+.productPart h1 {
+   font-size: 26px;
+   font-weight: 500;
+   margin-bottom: 0;
+}
+
+.productPart .subtitle {
+   color: var(--gray);
+   font-size: 18px;
+   font-weight: 500;
+}
+
+.productStars {
+   display: flex;
+   gap: 1em;
+}
+
+.productStars a {
+   font-size: 14px;
+   color: var(--blue);
+   font-style: italic;
+}
+
+.productReviewsLabel {
+
+}
+
+.productPriceContainer {
+   font-size: 18px;
+   display: flex;
+   gap: 2em;
+}
+
+.productPrice {
+
+}
+
+.productPrice--sale {
+   color: var(--red);
+   font-weight: 700;
 }

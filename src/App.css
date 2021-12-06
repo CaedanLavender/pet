@@ -40,9 +40,9 @@
 }
 
 .gone {
-  display: none !important;
+   display: none !important;
 }
 
 .strikeOut {
-  text-decoration: line-through;
+   text-decoration: line-through;
 }
