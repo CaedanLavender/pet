@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import '../styles/Product.css'
+import { animalHouse } from '../utils/index'
 
 const Product = () => {
    const { id } = useParams();
@@ -33,7 +34,7 @@ const Product = () => {
             </div>
             <div className="pageBanner dogBanner"></div>
             <div className="bannerPositioner">
-               <div className="breadCrumb whiteLabel"><span className='breadCrumbFaint'>Home / The Doge House / Food / Edibles: Dry /&nbsp;</span>{product.Product}</div>
+               <div className="breadCrumb whiteLabel"><span className='breadCrumbFaint'>Home / {animalHouse('dog')} / {product['Product Type']} / Edibles: Dry /&nbsp;</span>{product.Product}</div>
             </div>
          </div>
 
