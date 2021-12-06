@@ -58,14 +58,13 @@ const Product = () => {
                <span className='subtitle'>{product.Brand}</span>
                <div className='productStars'>
                   * * * * *
-                  <a href="#" >27 Reviews</a></div>
+                  <a href="#" >27 Reviews</a>
+               </div>
                <div className='productPriceContainer'>
-                  <span className={`productPrice ${product['Sale Price'] && 'strikeOut'}`}>
-                     ${product.Price}
-                  </span>
-                  <span className='productPrice--sale'>
-                     ${product['Sale Price']}
-                  </span>
+                  <span
+                     className={`productPrice ${product['Sale Price'] && 'strikeOut'}`}
+                  >${product.Price}</span>
+                  <span className='productPrice--sale'>${product['Sale Price']}</span>
                </div>
             </div>
          </div>
