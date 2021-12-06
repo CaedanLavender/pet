@@ -63,3 +63,43 @@
 .breadCrumb .breadCrumbFaint {
    color: var(--gray);
 }
+
+/* PRODUCT */
+
+.productContainer {
+   margin: 50px 100px;
+   background-color: blue;
+   display: flex;
+   gap: 2em;
+}
+
+.productPart {
+   background-color: red;
+   display: flex;
+   flex: 100%;
+   flex-direction: column;
+}
+
+.productCard {
+   background-color: white;
+   border-radius: 25px;
+   box-shadow: 9px 9px 16px 0px #C7C7C740;
+   box-shadow: -9px -9px 16px 0px #EDEDED40;
+   padding: 2em;
+   -webkit-border-radius: 25px;
+   -moz-border-radius: 25px;
+   -ms-border-radius: 25px;
+   -o-border-radius: 25px;
+}
+
+.productPrimary {
+   width: 100%;
+}
+
+.productTripletSuper {
+   display: flex;
+}
+
+.productTriplet {
+
+}
