@@ -6,8 +6,11 @@ import { animalHouse } from '../utils/index'
 
 const Product = () => {
    const { id } = useParams();
+   const weight = ["2.4kg", "3.6kg"]
 
    const [product, setProduct] = useState({});
+   const [weightSelection, setWeightSelection] = useState();
+   const [quantity, setQuantity] = useState(1);
 
    const getProduct = () => {
       axios.get("http://localhost:5000/product/" + id)
@@ -19,6 +22,16 @@ const Product = () => {
             console.log("There was an error")
          })
       console.log(product)
+   }
+
+   const handleSelect = (e) => {
+      setWeightSelection(e.target.value)
+   }
+
+   const handleStepper = (incrememnt) => {
+      const MAX = 10;
+      const newValue = quantity + incrememnt;
+      setQuantity(newValue > MAX ? MAX : newValue || 1);
    }
 
    useEffect(() => {
@@ -44,7 +57,7 @@ const Product = () => {
             {/* COLUMN 1 */}
             <div className='productPart'>
                <div className="productPrimary productCard">
-                  <img src={`/images/products/${product._id}--primary.webp`} />
+                  <img src={`/images/products/${product._id}--primary.png`} />
                </div>
                <div className="productTripletSuper">
                   <div className="productTriplet productCard">1</div>
@@ -62,12 +75,32 @@ const Product = () => {
                   <a href="#" >27 Reviews</a>
                </div>
                <div className='productPriceContainer'>
-                  <span
-                     className={`productPrice ${product['Sale Price'] && 'strikeOut'}`}
-                  >${product.Price}</span>
+                  <span className={`productPrice ${product['Sale Price'] && 'strikeOut'}`}>${product.Price}</span>
                   <span className='productPrice--sale'>${product['Sale Price']}</span>
                </div>
+
+               <div className='productFilters'>
+                  <label>
+                     Product Weight
+                     <select name='productWeight' id='productWeight' onChange={handleSelect}>
+                        {
+                           weight.map((item) => (
+                              <option value={item}>{item}</option>
+                           ))
+                        }
+                     </select>
+                  </label>
+                  <label>
+                     Quantity
+                  <div className='quantityController'>
+                     <span className={`quantityStepper ${quantity===1 && 'quantityStepper--inactive'}`} onClick={() => handleStepper(-1)}>–</span>
+                     <span>{quantity}</span>
+                     <span className='quantityStepper' onClick={() => handleStepper(1)}>+</span>
+                  </div>
+                  </label>
+               </div>
             </div>
+
          </div>
       </div>
    )
