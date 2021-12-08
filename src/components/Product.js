@@ -1,16 +1,19 @@
+import '../styles/Product.css'
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import '../styles/Product.css'
-import { animalHouse } from '../utils/index'
+// eslint-disable-next-line
+import { getAnimalHouse } from '../utils/index'
+import BannerImage from '../assets/dog--product--background.png'
+import { ReactComponent as StarEmpty } from '../assets/star-empty.svg';
+import { ReactComponent as StarHalf } from '../assets/star-half.svg';
+import { ReactComponent as StarFull } from '../assets/star-full.svg';
 
-const Product = () => {
+const Productx = () => {
    const { id } = useParams();
-   const weight = ["2.4kg", "3.6kg"]
-
    const [product, setProduct] = useState({});
-   const [weightSelection, setWeightSelection] = useState();
-   const [quantity, setQuantity] = useState(1);
+   const [animalHouse, setAnimalHouse] = useState();
+   const rating = 3.6;
 
    const getProduct = () => {
       axios.get("http://localhost:5000/product/" + id)
@@ -24,86 +27,68 @@ const Product = () => {
       console.log(product)
    }
 
-   const handleSelect = (e) => {
-      setWeightSelection(e.target.value)
-   }
-
-   const handleStepper = (incrememnt) => {
-      const MAX = 10;
-      const newValue = quantity + incrememnt;
-      setQuantity(newValue > MAX ? MAX : newValue || 1);
-   }
+   const bannerStyle = {
+      backgroundImage: 'url(' + BannerImage + ')',
+   };
 
    useEffect(() => {
       getProduct();
+      // eslint-disable-next-line
    }, []);
 
+   useEffect(() => {
+      setAnimalHouse(product.Animal);
+   }, [product])
+
    return (
-      <div className='pageContainer'>
-         {/* BANNER */}
-         <div className="bannerContainer">
-            <div className='bannerPositioner'>
-               <div className="bannerTitle whiteLabel">The Doge House</div>
+      <div className="pageContainer">
+         <section id='pageHeader'>
+            <div className='pageTitle'>The <strong>Dog</strong> House</div>
+            <div className='pageBanner' style={bannerStyle}>
+               <div className='pageCrumb'>Home / {animalHouse} / {product['Product Type']} / Edibles: Dry / <span className='crumbProduct'>{product.Product}</span></div>
             </div>
-            <div className="pageBanner dogBanner"></div>
-            <div className="bannerPositioner">
-               <div className="breadCrumb whiteLabel"><span className='breadCrumbFaint'>Home / {animalHouse('dog')} / {product['Product Type']} / Edibles: Dry /&nbsp;</span>{product.Product}</div>
-            </div>
-         </div>
+         </section>
+         <section id="productContainer">
 
-         {/* PRODUCT */}
-         <div className='productContainer'>
-
-            {/* COLUMN 1 */}
-            <div className='productPart'>
-               <div className="productPrimary productCard">
-                  <img src={`/images/products/${product._id}--primary.png`} />
+            <div className='productColumn' id='productPictures'>
+               <div className="triplet">
+                  <div className="productCard secondary">2</div>
+                  <div className="productCard secondary">3</div>
+                  <div className="productCard secondary">4</div>
                </div>
-               <div className="productTripletSuper">
-                  <div className="productTriplet productCard">1</div>
-                  <div className="productTriplet productCard">2</div>
-                  <div className="productTriplet productCard">3</div>
+               <div className="productCard primary">
+                  1
                </div>
             </div>
-
-            {/* COLUMN 2 */}
-            <div className='productPart'>
-               <h1>{product.Product}</h1>
-               <span className='subtitle'>{product.Brand}</span>
-               <div className='productStars'>
-                  * * * * *
-                  <a href="#" >27 Reviews</a>
-               </div>
-               <div className='productPriceContainer'>
-                  <span className={`productPrice ${product['Sale Price'] && 'strikeOut'}`}>${product.Price}</span>
-                  <span className='productPrice--sale'>${product['Sale Price']}</span>
-               </div>
-
-               <div className='productFilters'>
-                  <label>
-                     Product Weight
-                     <select name='productWeight' id='productWeight' onChange={handleSelect}>
-                        {
-                           weight.map((item) => (
-                              <option value={item}>{item}</option>
-                           ))
-                        }
-                     </select>
-                  </label>
-                  <label>
-                     Quantity
-                  <div className='quantityController'>
-                     <span className={`quantityStepper ${quantity===1 && 'quantityStepper--inactive'}`} onClick={() => handleStepper(-1)}>–</span>
-                     <span>{quantity}</span>
-                     <span className='quantityStepper' onClick={() => handleStepper(1)}>+</span>
+            
+            <div className='productColumn'>
+               <div id='productDetails'>
+                  <div>
+                     <h1>{product.Product}</h1>
+                     <h3>{product.Brand}</h3>
+                     <div id='productReview'>
+                        <div className='productStars'>
+                           {
+                              [...Array(5)].map((item, i) => {
+                                 if (rating >= i + 1) return <StarFull />
+                                 if (Math.floor(rating) === (i)) return <StarHalf />
+                                 return <StarEmpty />
+                              }
+                              )
+                           }
+                        </div>
+                        <span>27 Reviews</span>
+                     </div>
                   </div>
-                  </label>
+                  <div id='productPrice'>
+                     <span className={`${product['Sale Price'] && 'strikeOut'}`}>${product.Price}</span>
+                     <span id='salePrice'>{(a => a && '$' + a)(product['Sale Price'])}</span>
+                  </div>
                </div>
             </div>
-
-         </div>
+         </section>
       </div>
    )
 }
 
-export default Product;
+export default Productx;

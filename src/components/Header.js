@@ -50,6 +50,11 @@ const Header = () => {
          posh: "Piscis",
          link: '#'
       },
+      {
+         title: "bird",
+         posh: 'Avian',
+         link: "#"
+      }
    ]
 
    return (
@@ -76,6 +81,7 @@ const Header = () => {
                      ))
                   }
                </ul>
+               <div className="inputContainer"><input type="text" placeholder="Can't find your pet?"/></div>
                <aside>
                   <Link to="/account">
                      <AccountLogo />

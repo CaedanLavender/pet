@@ -1,8 +1,9 @@
 .callToActionSuper {
    width: 100%;
-   background-color: var(--mellow);
+   background-color: var(--black);
    display: flex;
    justify-content: center;
+   color: white;
 }
 
 .callToAction {
@@ -49,18 +50,23 @@ header {
    display: flex;
    flex-direction: column;
    width: 100%;
+   padding: 0 80px;
    max-width: var(--max-content);
+   justify-content: space-between;
 }
 
 nav {
    display: flex;
    justify-content: space-between;
    height: 88px;
+   gap: 1.5em;
+   padding-top: 15px;
+   /* flex: 100%; */
 }
 
 nav aside .logo {
    position: relative;
-   bottom: -16px;
+   bottom: -14px;
    background-color: white;
    box-shadow: #0000001a 4px 9px 25px -6px;
    display: flex;
@@ -75,15 +81,39 @@ nav aside .logo {
    -o-border-radius: 500px;
 }
 
+nav .inputContainer {
+   display: flex;
+   align-items: center;
+}
+
+nav input {
+   padding: 0.6em 1em;
+   height: fit-content;
+   border: 1px solid var(--gray);
+   border-radius: 10px;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   -ms-border-radius: 10px;
+   -o-border-radius: 10px;
+}
+
+nav input:focus {
+   outline: none;
+}
+
+nav input::placeholder {
+   color: var(--gray)
+}
+
 nav aside {
-   width: 200px;
+   /* width: 200px; */
    display: flex;
    justify-content: center;
    align-items: center;
    gap: 1.5em;
 }
 
-nav aside:first-of-type {
+/* nav aside:first-of-type {
    justify-content: flex-start;
    padding-left: 2em;
 }
@@ -91,10 +121,11 @@ nav aside:first-of-type {
 nav aside:last-of-type {
    justify-content: flex-end;
    padding-right: 2em;
-}
+} */
 
 nav ul {
    display: flex;
+   flex: 100%;
    align-items: center;
    justify-content: space-between;
    list-style: none;
@@ -108,7 +139,7 @@ nav ul a {
 }
 
 nav ul li {
-   padding: 0.5em 1.5em;
+   padding: 0.5em 1em;
    font-size: 18px;
    text-transform: uppercase;
    font-weight: 500;
@@ -120,13 +151,13 @@ nav ul li {
    -o-border-radius: 500px;
    user-select: none;
    cursor: pointer;
-   transition: border 100ms ease-in-out;
-   -webkit-transition: border 100ms ease-in-out;
-   -moz-transition: border 100ms ease-in-out;
-   -ms-transition: border 100ms ease-in-out;
-   -o-transition: border 100ms ease-in-out;
+   transition: color 100ms ease-in-out;
+   -webkit-transition: color 100ms ease-in-out;
+   -moz-transition: color 100ms ease-in-out;
+   -ms-transition: color 100ms ease-in-out;
+   -o-transition: color 100ms ease-in-out;
 }
 
 nav ul li:hover {
-   border-color: var(--blue);
+   color: var(--red);
 }
