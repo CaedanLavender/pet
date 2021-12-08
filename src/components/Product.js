@@ -30,21 +30,32 @@ const Productx = () => {
    const productDescription = [
       {
          title: 'description',
-         content: 'description stuff'
+         content: [
+            'Omega Plus King Salmon dry dog food is 100% NZ made using King salmon as the number one ingredient.',
+            'Farmed sustainably in the Marlborough Sounds, King salmon boasts high levels of omega-3/omega-6 which have a range of health benefits for your dog, including healthy skin and coat, brain maintenance, heart and intestine health, joint mobility and dental health.',
+         ],
+         tags: [
+            { name: 'ageing', color: '#AB8D80' },
+            { name: 'ortho', color: '#F4D04F' },
+            { name: 'coat', color: '#828AD0' }
+         ]
       },
       {
          title: 'ingredients',
-         content: 'ingredients content'
+         content: ['Ingredients content']
       },
       {
          title: 'feeding guidelines',
-         content: 'feeding guidelines content'
+         content: ['Feeding guidelines content']
       }
    ]
    const autoshipOptions = ['Hourly', 'Fortnightly', 'Monthly'];
    const bannerStyle = {
       backgroundImage: 'url(' + BannerImage + ')',
    };
+   const tagColor = (color) => {
+      return { backgroundColor: color }
+   }
 
 
    // AXIOS //////////////////////////////////////////////////////////
@@ -196,17 +207,50 @@ const Productx = () => {
 
             </div>
          </section>
+
+         {/* PRODUCT DESCRIPTION */}
          <section id='productDescription'>
+            {/* HEADING */}
             <div id='descriptionHeading'>
                {
+                  // ITEMS GET MAPPED OUT FROM AN ARRAY HERE
                   productDescription.map((item, i) => (
-                     <div className={i === descriptionTab && 'activeTab'}>
+                     <div className={i === descriptionTab && 'activeTab'} onClick={() => handleDescriptionTab(i)}>
                         {item.title}
                      </div>
                   ))
                }
             </div>
-            <p>{productDescription[descriptionTab].content}</p>
+
+            {/* DESCRIPTION */}
+            <div id='descriptionContent'>
+               <div>
+                  {
+                     // CONTENT IS STORED IN AN ARRAY WHERE EACH ITEM REPRESENTS A PARAGRAPH
+                     // HERE THESE PARAGRAPHS ARE MAPPED OUT
+                     productDescription[descriptionTab].content.map((paragraph) => (
+                        <p>{paragraph}</p>
+                     ))
+                  }
+               </div>
+               {
+                  // TAGS ARE MAPPED OUT OF AN ARRAY
+                  (productDescription[descriptionTab].tags && (
+                     <div className='tagSuper'>
+                        Product Tags
+                        <div className='tagContainer'>
+                           {
+                              // EACH TAG IS RENDERED WITH A STYLE THAT TAKES A COLOR AS A PARAMETER
+                              // THE BACKGROUND IS THEN SET ACCORDINGLY
+                              productDescription[descriptionTab].tags?.map((tag) => (
+                                 <div className='productTag' style={tagColor(tag.color)}>{tag.name}</div>
+                              ))
+                           }
+                        </div>
+                     </div>
+                  ))
+               }
+            </div>
          </section>
       </div>
    )

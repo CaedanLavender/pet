@@ -69,7 +69,7 @@ section#productContainer {
    flex-direction: row;
    gap: var(--s3);
 }
-   
+
 .productColumn {
    display: flex;
    flex-direction: column;
@@ -94,12 +94,12 @@ section#productContainer {
 
 .productColumn h1 {
    font-size: 26px;
-   font-weight: 500;  
+   font-weight: 500;
 }
 
 .productColumn h3 {
    font-size: 18px;
-   font-weight: 500;  
+   font-weight: 500;
    color: var(--font-secondary)
 }
 
@@ -121,13 +121,9 @@ section#productContainer {
    object-fit: contain;
 }
 
-.productCard.primary {
-   
-}
+.productCard.primary {}
 
-.productCard.secondary {
-
-}
+.productCard.secondary {}
 
 .productColumn .triplet {
    display: flex;
@@ -147,7 +143,7 @@ section#productContainer {
    gap: 4px;
 }
 
-.productStars > * {
+.productStars>* {
    height: 18px;
 }
 
@@ -276,7 +272,7 @@ section#productContainer {
 #bag #addToBag {
    background-color: var(--primary);
    color: white;
-} 
+}
 
 #bag #heartButton {
    width: 44px;
@@ -332,12 +328,81 @@ section#productContainer {
    -moz-border-radius: 500px;
    -ms-border-radius: 500px;
    -o-border-radius: 500px;
+   cursor: pointer;
 }
 
 section#productDescription {
    background-color: var(--white);
+   overflow: hidden;
+   box-shadow: var(--shaddow1);
+   border-radius: 10px;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   -ms-border-radius: 10px;
+   -o-border-radius: 10px;
+}
+
+#descriptionHeading {
+   display: flex;
+   gap: var(--s2);
+   height: 68px;
+   padding: 0 var(--s2);
+   box-shadow: var(--shaddow1);
+}
+
+#descriptionHeading div {
+   height: 100%;
+   font-size: 18px;
+   text-transform: uppercase;
+   display: flex;
+   align-items: center;
+   user-select: none;
+   cursor: pointer;
+   transition: color 100ms ease-in-out;
+   -webkit-transition: color 100ms ease-in-out;
+   -moz-transition: color 100ms ease-in-out;
+   -ms-transition: color 100ms ease-in-out;
+   -o-transition: color 100ms ease-in-out;
+}
+
+#descriptionHeading div:hover {
+   color: var(--primary);
+}
+
+#descriptionContent {
+   padding: var(--s2);
+   display: flex;
+   flex-direction: column;
+   gap: var(--s2);
 }
 
 .activeTab {
    color: var(--primary)
+}
+
+.tagSuper {}
+
+.tagContainer {
+   display: flex;
+   gap: var(--s1);
+   padding-top: var(--s0);
+}
+
+.productTag {
+   text-transform: capitalize;
+   color: white;
+   display: flex;
+   background-color: red;
+   padding: 5px 10px;
+   border-radius: 100px;
+   -webkit-border-radius: 100px;
+   -moz-border-radius: 100px;
+   -ms-border-radius: 100px;
+   -o-border-radius: 100px;
+}
+
+
+
+.productTag::before {
+   content: "●";
 }
