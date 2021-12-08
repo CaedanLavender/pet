@@ -5,6 +5,10 @@
    text-align: left;
 }
 
+a {
+   color: var(--link);
+}
+
 section#pageHeader {
    display: flex;
    flex-direction: column;
@@ -65,14 +69,13 @@ section#productContainer {
    flex-direction: row;
    gap: var(--s3);
 }
-
+   
 .productColumn {
    display: flex;
    flex-direction: column;
    justify-content: flex-start;
    flex: 40%;
    gap: var(--s1);
-   border: 1px solid red;
 }
 
 .productColumn:first-of-type {
@@ -109,6 +112,13 @@ section#productContainer {
    -moz-border-radius: 25px;
    -ms-border-radius: 25px;
    -o-border-radius: 25px;
+   padding: var(--s1)
+}
+
+.productCard img {
+   height: 100%;
+   width: 100%;
+   object-fit: contain;
 }
 
 .productCard.primary {
@@ -126,7 +136,7 @@ section#productContainer {
    gap: var(--s1);
 }
 
-.productReview {
+#productReview {
    display: flex;
    flex-direction: row;
    gap: var(--s1)
@@ -144,10 +154,190 @@ section#productContainer {
 #productPrice {
    font-size: 24px;
    display: flex;
-   gap: var(--s1);
+   gap: var(--s2);
 }
 
 #productPrice #salePrice {
    color: var(--red);
    font-weight: 700;
+}
+
+#productOptions {
+   display: flex;
+   gap: var(--s2);
+}
+
+#productOptions label {
+   font-size: 14px;
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+}
+
+.filterBorder {
+   font-size: 18px;
+   border: 1px solid var(--black);
+   padding: var(--s0);
+   border-radius: var(--s0);
+   -webkit-border-radius: var(--s0);
+   -moz-border-radius: var(--s0);
+   -ms-border-radius: var(--s0);
+   -o-border-radius: var(--s0);
+}
+
+#productWeight {
+   width: 140px;
+}
+
+#quantityController {
+   user-select: none;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   gap: var(--s0)
+}
+
+.quantityStepper {
+   font-family: sans-serif;
+   transition: border-color 200ms ease-in-out;
+   -webkit-transition: border-color 200ms ease-in-out;
+   -moz-transition: border-color 200ms ease-in-out;
+   -ms-transition: border-color 200ms ease-in-out;
+   -o-transition: border-color 200ms ease-in-out;
+   border: 1px solid transparent;
+   border-radius: 3px;
+   -webkit-border-radius: 3px;
+   -moz-border-radius: 3px;
+   -ms-border-radius: 3px;
+   -o-border-radius: 3px;
+   cursor: pointer;
+   padding: 0 10px;
+}
+
+.quantityStepper:hover {
+   border-color: var(--gray);
+}
+
+.quantityStepper--inactive {
+   color: var(--gray);
+}
+
+#shippingOptions {
+   display: flex;
+   gap: var(--s2);
+}
+
+#shippingOptions label {
+   font-size: 14px;
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+}
+
+#shippingOptions select {
+   font-size: 16px;
+}
+
+#shippingOptions a {
+   font-style: italic;
+}
+
+#bag {
+   display: flex;
+   flex-direction: column;
+   gap: var(--s1);
+}
+
+#bag .buttonContainer {
+   display: flex;
+   gap: var(--s1);
+}
+
+
+#bag .buttonContainer button {
+   height: 44px;
+   font-size: 18px;
+   padding: 10px 25px;
+   border-radius: 500px;
+   -webkit-border-radius: 500px;
+   -moz-border-radius: 500px;
+   -ms-border-radius: 500px;
+   -o-border-radius: 500px;
+   border: 0;
+   cursor: pointer;
+   transition: all 100ms ease-in-out;
+   -webkit-transition: all 100ms ease-in-out;
+   -moz-transition: all 100ms ease-in-out;
+   -ms-transition: all 100ms ease-in-out;
+   -o-transition: all 100ms ease-in-out;
+   box-shadow: var(--shaddow1);
+}
+
+#bag #addToBag {
+   background-color: var(--primary);
+   color: white;
+} 
+
+#bag #heartButton {
+   width: 44px;
+   background-color: white;
+   padding: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+/* #bag .buttonContainer button:hover {
+   box-shadow: var(--shaddow2);
+   transform: scale(1.05);
+   -webkit-transform: scale(1.05);
+   -moz-transform: scale(1.05);
+   -ms-transform: scale(1.05);
+   -o-transform: scale(1.05);
+} */
+
+#afterPayContainer {
+   height: 44px;
+}
+
+#afterPayContainer img {
+   height: 100%;
+   width: 100%;
+   object-fit: contain;
+}
+
+.freeSampleContainer {
+   display: flex;
+   flex-direction: row;
+   gap: var(--s0);
+   align-items: center;
+}
+
+#freeSampleTagline {
+   font-size: 14px;
+   font-style: italic;
+   color: var(--black)
+}
+
+#freeSampleButton {
+   border: 0;
+   color: var(--primary);
+   border-radius: 500px;
+   padding: 5px 10px;
+   font-size: 11px;
+   width: auto;
+   height: 28px;
+   background-color: var(--primary-light);
+   -webkit-border-radius: 500px;
+   -moz-border-radius: 500px;
+   -ms-border-radius: 500px;
+   -o-border-radius: 500px;
+}
+
+section#productDescription {
+   background-color: var(--white);
+}
+
+.activeTab {
+   color: var(--primary)
 }

@@ -21,18 +21,22 @@
 
    /* COLORS v2 */
    --primary: #E35056;
+   --primary-light: #E350562B;
    --dark-grey: #B9B3B8;
    --light-grey: #EEEEEE;
    --font-primary: #39363C;
    --font-secondary: var(--dark-grey);
+   --link: #788AAE;
    --white: white;
    --background: #FAFAFA;
 
    /* BESPOKE */
    --shaddow1: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+   --shaddow2: #E350562B 0px 8px 24px;
 
    /* spacing */
    --margin: 80px;
+   --s0: 10px;
    --s1: 20px;
    --s2: 30px;
    --s3: 60px;
