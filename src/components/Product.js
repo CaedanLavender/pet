@@ -1,22 +1,22 @@
 import '../styles/Product.css'
 import axios from 'axios';
+import moment from 'moment'
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 // eslint-disable-next-line
 import { getAnimalHouse } from '../utils/index'
 import BannerImage from '../assets/dog--product--background.png';
 import AfterPayBlack from '../assets/afterpay--black.png';
-import { ReactComponent as StarEmpty } from '../assets/star-empty.svg';
-import { ReactComponent as StarHalf } from '../assets/star-half.svg';
-import { ReactComponent as StarFull } from '../assets/star-full.svg';
 import { ReactComponent as HeartIcon } from '../assets/heart.svg';
+import Rating from './Rating';
 
-const Productx = () => {
+const Product = ({ cart, updateCart }) => {
    const { id } = useParams();
 
 
    // STATES /////////////////////////////////////////////////////////
    const [product, setProduct] = useState({});
+   const [reviews, setReviews] = useState([]);
    const [animalHouse, setAnimalHouse] = useState();
    const [weightSelection, setWeightSelection] = useState();
    const [autoshipSelection, setAutoshipSelection] = useState();
@@ -71,6 +71,14 @@ const Productx = () => {
       console.log(product)
    }
 
+   const getReviews = () => {
+      axios.get('http://localhost:5000/reviews/' + id)
+         .then((response) => {
+            console.log(response)
+            setReviews(response.data)
+         })
+   }
+
    // HANDLERS ///////////////////////////////////////////////////////
    const handleWeightSelect = (e) => {
       setWeightSelection(e.target.value)
@@ -86,6 +94,10 @@ const Productx = () => {
       setQuantity(newValue > MAX ? MAX : newValue || 1);
    }
 
+   const handleCartUpdate = () => {
+      updateCart({ id: product._id, quantity: quantity })
+   }
+
    const handleDescriptionTab = (tab) => {
       setDescriptionTab(tab);
    }
@@ -97,6 +109,7 @@ const Productx = () => {
    }, []);
 
    useEffect(() => {
+      getReviews();
       setAnimalHouse(product.Animal);
    }, [product])
 
@@ -110,6 +123,7 @@ const Productx = () => {
          </section>
          <section id="productContainer">
 
+            {/* COLUMN ONE */}
             <div className='productColumn' id='productPictures'>
                <div className="triplet">
                   {
@@ -125,6 +139,7 @@ const Productx = () => {
                </div>
             </div>
 
+            {/* COLUMN TWO */}
             <div className='productColumn'>
 
                <div id='productDetails'>
@@ -133,13 +148,15 @@ const Productx = () => {
                      <h3>{product.Brand}</h3>
                      <div id='productReview'>
                         <div className='productStars'>
-                           {
+                           <Rating rating={rating}/>
+                           {/* {
                               [...Array(5)].map((item, i) => {
-                                 if (rating >= i + 1) return <StarFull />
-                                 if (Math.floor(rating) === (i)) return <StarHalf />
+                                 const r = rating;
+                                 if (r >= i + 1) return <StarFull />
+                                 if (Math.floor(r) === i) return <StarHalf />
                                  return <StarEmpty />
                               })
-                           }
+                           } */}
                         </div>
                         <div><a href="#">27 Reviews</a></div>
                      </div>
@@ -189,7 +206,7 @@ const Productx = () => {
                   </div>
                   <div id='bag'>
                      <div className='buttonContainer'>
-                        <button type='text' id='addToBag'>Add to Bag</button>
+                        <button type='text' id='addToBag' onClick={handleCartUpdate}>Add to Bag</button>
                         <button type='text' id='heartButton'>
                            <HeartIcon />
                         </button>
@@ -243,9 +260,37 @@ const Productx = () => {
                               // EACH TAG IS RENDERED WITH A STYLE THAT TAKES A COLOR AS A PARAMETER
                               // THE BACKGROUND IS THEN SET ACCORDINGLY
                               productDescription[descriptionTab].tags?.map((tag) => (
-                                 <div className='productTag' style={tagColor(tag.color)}>{tag.name}</div>
+                                 <div className='productTag' style={tagColor(tag.color)}>&nbsp;{tag.name}</div>
                               ))
                            }
+                        </div>
+                     </div>
+                  ))
+               }
+            </div>
+         </section>
+         <section id='reviews'>
+            <div className='pageTitle'>Read what other {product.Animal}s think of {product.Product}</div>
+            <div className='reviewContainer'>
+               {
+                  reviews.map((each) => (
+                     <div className='reviewItem'>
+                        <div>
+                           <span className='reviewName'>{each.name}</span>
+                           <span className='reviewDate'>{moment(each.date).format('DD/MM/yyyy')}</span>
+                        </div>
+                        <div className='ratingWrapper'>
+                           <Rating rating={each.rating} />
+                        </div>
+                        <div className='reviewContent'>{each.content}</div>
+                        <div className='reviewFeedback'>
+                           <div className='reviewFeedbackHelpful'>
+                              <span>Did you find this review helpful?</span>
+                              <button id='yesButton'>Yes</button>
+                              <button id='noButton'>No</button>
+                           </div>
+
+                        <span className='reviewFeedbackRecommend'>Would you recommend to a friend? <a href='#'>Yes</a></span>
                         </div>
                      </div>
                   ))
@@ -256,4 +301,4 @@ const Productx = () => {
    )
 }
 
-export default Productx;
+export default Product;

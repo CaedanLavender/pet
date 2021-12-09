@@ -401,8 +401,82 @@ section#productDescription {
    -o-border-radius: 100px;
 }
 
-
-
 .productTag::before {
    content: "●";
+}
+
+section#reviews {
+   display: flex;
+   flex-direction: column;
+   gap: var(--s3);
+}
+.reviewContainer {
+   background-color: white;
+   box-shadow: var(--shaddow1);
+   padding: var(--s2);
+   border-radius: 10px;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   -ms-border-radius: 10px;
+   -o-border-radius: 10px;
+}
+
+.reviewItem .ratingWrapper {
+   padding: var(--s0) 0;
+}
+
+.reviewName {
+   font-size: 18px;
+}
+
+.reviewDate {
+   color: var(--dark-grey);
+   font-size: 14px;
+   margin-left: var(--s1);
+}
+
+.reviewContent {
+   font-size: 14px;
+   /* padding-top: var(--s0); */
+}
+
+.reviewFeedback {
+   display: flex;
+   justify-content: space-between;
+   font-size: 14px;
+   align-items: center;
+   margin: var(--s2) 0;
+   gap: var(--s2);
+}
+
+.reviewFeedbackHelpful span {
+   margin-right: var(--s0);
+}
+
+.reviewFeedback button {
+   font-size: 11px;
+   height: 28px;
+   width: 55px;
+   margin: 0 3px;
+   padding: 5px;
+   border-radius: 100px;
+   border: 0;
+   -webkit-border-radius: 100px;
+   -moz-border-radius: 100px;
+   -ms-border-radius: 100px;
+   -o-border-radius: 100px;
+   box-shadow: var(--shaddow1);
+}
+.reviewFeedback #yesButton {
+   color: var(--white);
+   background-color: var(--primary);
+}
+
+.reviewFeedback #noButton{
+   color: var(--primary);
+   background-color: var(--primary-light);
+}
+
+.reviewFeedbackRecommend {
+   color: var(--dark-grey);
 }
