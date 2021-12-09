@@ -15,7 +15,7 @@ const mongoose = require('mongoose');
 const databaseRouter = require('./routes/databaseRoutes')
 const api = require('./routes/api')
 require('dotenv').config();
-
+const filter = require ('./routes/filter')
 
 // EXPRESS SETUP ////////////////////////////////////////////
 app.use(express.urlencoded({ extended: true }));
@@ -40,8 +40,9 @@ connection.once("open", () => {
 // DATABASE ROUTER IMPORT ///////////////////////////////////
 app.use(databaseRouter);
 app.use(api);
-
+app.use(filter);
 
 // LISTEN ///////////////////////////////////////////////////
 const PORT = 5000
 app.listen(PORT, () => console.log("Listening on port: " + PORT));
+

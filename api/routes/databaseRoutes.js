@@ -10,7 +10,7 @@ app.get('/product/:id', async (req, res) => {
    const product = req.params.id.toString();
    console.log(product)
    try {
-      const results = await  Product.findById(req.params.id).exec();
+      const results = await Product.findById(req.params.id).exec();
       console.log(results);
       res.send(results);
    } catch (err) {

@@ -61,8 +61,8 @@ const Footer = () => {
                </div>
             </footer>
          </div>
-         <div className="mellowDiv">
-         </div>
+         {/* <div className="mellowDiv">
+         </div> */}
       </>
    )
 }
