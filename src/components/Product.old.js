@@ -90,7 +90,6 @@ const Product = () => {
                         }
                      </select>
                   </label>
-                  <
                   <label>
                      Quantity
                   <div className='quantityController'>
