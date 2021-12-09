@@ -9,6 +9,8 @@ import BannerImage from '../assets/dog--product--background.png';
 import AfterPayBlack from '../assets/afterpay--black.png';
 import { ReactComponent as HeartIcon } from '../assets/heart.svg';
 import Rating from './Rating';
+import { qsReviews } from '../utils/index';
+
 
 const Product = ({ cart, updateCart }) => {
    const { id } = useParams();
@@ -17,6 +19,7 @@ const Product = ({ cart, updateCart }) => {
    // STATES /////////////////////////////////////////////////////////
    const [product, setProduct] = useState({});
    const [reviews, setReviews] = useState([]);
+   const [sortedReviews, setSortedReviews] = useState([]);
    const [animalHouse, setAnimalHouse] = useState();
    const [weightSelection, setWeightSelection] = useState();
    const [autoshipSelection, setAutoshipSelection] = useState();
@@ -55,6 +58,12 @@ const Product = ({ cart, updateCart }) => {
    };
    const tagColor = (color) => {
       return { backgroundColor: color }
+   }
+
+   
+   const sortReviews = () => {
+      setSortedReviews(qsReviews(reviews));
+      console.log(sortedReviews)
    }
 
 
@@ -112,6 +121,10 @@ const Product = ({ cart, updateCart }) => {
       getReviews();
       setAnimalHouse(product.Animal);
    }, [product])
+
+   useEffect(() => {
+      sortReviews();
+   }, [reviews])
 
    return (
       <div className="pageContainer">
@@ -273,7 +286,7 @@ const Product = ({ cart, updateCart }) => {
             <div className='pageTitle'>Read what other {product.Animal}s think of {product.Product}</div>
             <div className='reviewContainer'>
                {
-                  reviews.map((each) => (
+                  sortedReviews.map((each) => (
                      <div className='reviewItem'>
                         <div>
                            <span className='reviewName'>{each.name}</span>
