@@ -2,51 +2,52 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const productSchema = new Schema({}, {strict: false});
+const productSchema = new Schema({}, { strict: false });
 
 // const productSchema = new Schema({
-//    id: {
-//       type: Number
-//    },
-//    product: {
-//       type: String,
-//       required: true
-//    },
-//    productType: {
-//       type: String,
-//       required: true
-//    },
-//    animal: {
-//       type: String,
-//       required: true
-//    },
-//    breed: {
-//       type: String,
+//     _id: {
+//         type: Number
+//     },
+//     Product: {
+//         type: String,
+//         required: true
+//     },
+//     ProductType: {
+//         type: String,
+//         // required: true
+//     },
+//     Animal: {
+//         type: String,
+//         required: true
+//     },
+//     Breed: {
+//         type: String,
 
-//    },
-//    brand: {
-//       type: String,
+//     },
+//     Brand: {
+//         type: String,
 
-//    },
-//    weight: {
-//       type: Number,
+//     },
+//     Weight: {
+//         type: Number,
 
-//    },
-//    price: {
-//       type: Number,
-//       required: true
+//     },
+//     Price: {
+//         type: Number,
+//         required: true
 
-//    },
-//    salePrice: {
-//       type: Number,
+//     },
+//     SalePrice: {
+//         type: Number,
 
-//    },
-//    popularity: {
-//       type: Number,
-//       required: true
+//     },
+//     Popularity: {
+//         type: Number,
+//         required: true
 
-//    }
+//     }
 // });
+
 
 const Product = mongoose.model("product", productSchema);
 

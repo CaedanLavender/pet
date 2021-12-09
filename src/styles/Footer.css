@@ -1,7 +1,7 @@
 .blueDiv {
   width: 100%;
   background-color: var(--black);
-  height: 331px;
+  height: 390px;
   color: white;
 }
 
@@ -15,7 +15,7 @@ footer {
 }
 
 footer p {
-  margin-top: 40px;
+  margin-top: 80px;
   font-size: 18px;
   margin-bottom: 10px;
 }
@@ -42,7 +42,7 @@ footer input {
   background: #ffffff;
   border: 1px solid #b9b3b8;
   box-sizing: border-box;
-  border-radius: 5px;
+  border-radius: 10px;
   height: 38px;
   width: 246px;
   color: #b9b3b8;
@@ -52,8 +52,8 @@ footer input {
   cursor: pointer;
 }
 
-.mellowDiv {
+/* .mellowDiv {
   width: 100%;
   background-color: var(--mellow);
   height: 31.2px;
-}
+} */

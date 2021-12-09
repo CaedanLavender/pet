@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 const Product = require('../models/products')
+const cors=require('cors');
+const mongoose = require('mongoose');
+
 
 // ROUTES GO HERE...
 
@@ -9,7 +12,7 @@ app.get('/product/:id', async (req, res) => {
    const product = req.params.id.toString();
    console.log(product)
    try {
-      const results = await  Product.findById(req.params.id).exec();
+      const results = await Product.findById(req.params.id).exec();
       console.log(results);
       res.send(results);
    } catch (err) {
@@ -17,5 +20,6 @@ app.get('/product/:id', async (req, res) => {
       res.sendStatus(418);
    }
 });
+
 
 module.exports = app;
