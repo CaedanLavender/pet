@@ -75,7 +75,7 @@ label {
   color: #ffffff;
 }
 
-aside {
+aside#goFetch {
   margin-left: auto;
   margin-block-start: auto;
 }

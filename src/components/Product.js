@@ -12,7 +12,7 @@ import Rating from './Rating';
 import { qsReviews } from '../utils/index';
 
 
-const Product = ({ cart, updateCart }) => {
+const Product = ({ cart, updateCart, poshMode }) => {
    const { id } = useParams();
 
 
@@ -28,7 +28,7 @@ const Product = ({ cart, updateCart }) => {
 
 
    // CONSTANTS //////////////////////////////////////////////////////////
-   const rating = 3.6;
+   const rating = 3.8;
    const weight = ["2.4kg", "3.6kg"];
    const productDescription = [
       {
@@ -59,13 +59,6 @@ const Product = ({ cart, updateCart }) => {
    const tagColor = (color) => {
       return { backgroundColor: color }
    }
-
-   
-   const sortReviews = () => {
-      setSortedReviews(qsReviews(reviews));
-      console.log(sortedReviews)
-   }
-
 
    // AXIOS //////////////////////////////////////////////////////////
    const getProduct = () => {
@@ -111,6 +104,11 @@ const Product = ({ cart, updateCart }) => {
       setDescriptionTab(tab);
    }
 
+   const sortReviews = () => {
+      setReviews(qsReviews(reviews).reverse());
+      console.log(sortedReviews)
+   }
+
    // USEEFFECTS /////////////////////////////////////////////////////
    useEffect(() => {
       getProduct();
@@ -122,9 +120,9 @@ const Product = ({ cart, updateCart }) => {
       setAnimalHouse(product.Animal);
    }, [product])
 
-   useEffect(() => {
-      sortReviews();
-   }, [reviews])
+   // useEffect(() => {
+   //    sortReviews();
+   // }, [reviews])
 
    return (
       <div className="pageContainer">
@@ -161,7 +159,7 @@ const Product = ({ cart, updateCart }) => {
                      <h3>{product.Brand}</h3>
                      <div id='productReview'>
                         <div className='productStars'>
-                           <Rating rating={rating}/>
+                           <Rating rating={rating} />
                            {/* {
                               [...Array(5)].map((item, i) => {
                                  const r = rating;
@@ -284,9 +282,14 @@ const Product = ({ cart, updateCart }) => {
          </section>
          <section id='reviews'>
             <div className='pageTitle'>Read what other {product.Animal}s think of {product.Product}</div>
+            <div className='reviewSort'>
+               <button className='sortButton' onClick={sortReviews}>
+                  Sort by most helpful
+               </button>
+            </div>
             <div className='reviewContainer'>
                {
-                  sortedReviews.map((each) => (
+                  reviews.map((each) => (
                      <div className='reviewItem'>
                         <div>
                            <span className='reviewName'>{each.name}</span>
@@ -298,12 +301,12 @@ const Product = ({ cart, updateCart }) => {
                         <div className='reviewContent'>{each.content}</div>
                         <div className='reviewFeedback'>
                            <div className='reviewFeedbackHelpful'>
-                              <span>Did you find this review helpful?</span>
+                              <span>Did you find this review helpful? {poshMode && `(${each.upvotes})`}</span>
                               <button id='yesButton'>Yes</button>
                               <button id='noButton'>No</button>
                            </div>
 
-                        <span className='reviewFeedbackRecommend'>Would you recommend to a friend? <a href='#'>Yes</a></span>
+                           <span className='reviewFeedbackRecommend'>Would you recommend to a friend? <a href='#'>Yes</a></span>
                         </div>
                      </div>
                   ))

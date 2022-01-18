@@ -100,7 +100,7 @@ const Dog = () => {
                                     </select>
                                 </div>
                             </div>
-                            <aside>
+                            <aside id='goFetch'>
                                 <input type="search" placeholder="Go Fetch" className="search" />
                             </aside>
                         </div>

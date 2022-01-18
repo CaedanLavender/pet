@@ -6,9 +6,8 @@ import { ReactComponent as CartLogo } from '../assets/cart.svg'
 import { Link } from 'react-router-dom'
 
 
-const Header = () => {
+const Header = ({poshMode, setPoshMode}) => {
    const [bannerIsOpen, setBannerIsOpen] = useState(true)
-   const [poshMode, setPoshMode] = useState(false)
 
    const togglePosMode = () => setPoshMode(!poshMode);
 

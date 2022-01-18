@@ -25,7 +25,7 @@ export const qsReviews = (array) => {
    console.log(array)
    if (array.length < 2) return array
    else {
-      // batch declarations
+      // left and right array declarations
       let left = [];
       let right = []
       let length = array.length;

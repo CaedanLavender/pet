@@ -9,6 +9,7 @@ import Account from './components/Account';
 import Dog from './components/Dog';
 
 function App() {
+   const [poshMode, setPoshMode] = useState(false)
    const [cart, setCart] = useState([{id:"61ac20a852d5bf673f01b52b", quantity: 3}])
 
    // adds a new item to the array
@@ -31,7 +32,7 @@ function App() {
    return (
       <div className="App" >
          <BrowserRouter>
-            <Header />
+            <Header poshMode={poshMode} setPoshMode={setPoshMode}/>
             <div className="bodyContainer">
                <div className="bodyInner" >
                   <Routes>
@@ -39,7 +40,7 @@ function App() {
                      <Route path="/search" element={<span>Mock home search</span>} />
                      <Route path="/dog" element={<Dog />}/>
                      <Route path="/cart" element={ <Cart /> } />
-                     <Route path="/product/:id" element={ <Product cart={cart} addCart={handleCartUpdate} updateCart={handleCartUpdate}/> } />
+                     <Route path="/product/:id" element={ <Product cart={cart} addCart={handleCartUpdate} updateCart={handleCartUpdate} poshMode={poshMode}/> } />
                      <Route path="/account" element={ <Account /> } />
                   </Routes>
                </div>

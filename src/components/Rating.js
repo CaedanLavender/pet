@@ -3,12 +3,13 @@ import { ReactComponent as StarHalf } from '../assets/star-half.svg';
 import { ReactComponent as StarFull } from '../assets/star-full.svg';
 
 const Rating = ({ rating }) => {
+   const r = rating;
+   const isInt = Math.floor(r) === r;
 
    return (
       [...Array(5)].map((item, i) => {
-         const r = rating;
          if (r >= i + 1) return <StarFull />
-         if (Math.floor(r) === i) return <StarHalf />
+         if (!isInt && Math.floor(r) === i) return <StarHalf />
          return <StarEmpty />
       })
    )

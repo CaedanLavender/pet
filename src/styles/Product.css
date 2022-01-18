@@ -410,6 +410,39 @@ section#reviews {
    flex-direction: column;
    gap: var(--s3);
 }
+
+.reviewSort {
+   display: flex;
+   justify-content: flex-end;
+}
+
+.reviewSort .sortButton {
+   background-color: var(--white);
+   color: var(--primary);
+   border: 0;
+   padding: var(--s0);
+   box-shadow: var(--shaddow1);
+   border-radius: 100px;
+   -webkit-border-radius: 100px;
+   -moz-border-radius: 100px;
+   -ms-border-radius: 100px;
+   -o-border-radius: 100px;
+   user-select: none;
+   cursor: pointer;
+   transition: all 100ms ease-in-out;
+   -webkit-transition: all 100ms ease-in-out;
+   -moz-transition: all 100ms ease-in-out;
+   -ms-transition: all 100ms ease-in-out;
+   -o-transition: all 100ms ease-in-out;
+}
+
+.sortButton:hover {
+   box-shadow: var(--shaddow2);
+   background-color: var(--primary);
+   color: var(--white);
+}
+
+
 .reviewContainer {
    background-color: white;
    box-shadow: var(--shaddow1);
