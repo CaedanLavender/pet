@@ -55,7 +55,7 @@ section#pageHeader {
    -moz-border-radius: 10px;
    -ms-border-radius: 10px;
    -o-border-radius: 10px;
-   box-shadow: var(--shaddow1);
+   box-shadow: var(--shadow1);
 }
 
 .pageCrumb .crumbProduct {
@@ -105,7 +105,7 @@ section#productContainer {
 
 .productCard {
    background-color: var(--white);
-   box-shadow: var(--shaddow1);
+   box-shadow: var(--shadow1);
    flex: 75%;
    border-radius: 25px;
    -webkit-border-radius: 25px;
@@ -266,7 +266,7 @@ section#productContainer {
    -moz-transition: all 100ms ease-in-out;
    -ms-transition: all 100ms ease-in-out;
    -o-transition: all 100ms ease-in-out;
-   box-shadow: var(--shaddow1);
+   box-shadow: var(--shadow1);
 }
 
 #bag #addToBag {
@@ -284,7 +284,7 @@ section#productContainer {
 }
 
 /* #bag .buttonContainer button:hover {
-   box-shadow: var(--shaddow2);
+   box-shadow: var(--shadow2);
    transform: scale(1.05);
    -webkit-transform: scale(1.05);
    -moz-transform: scale(1.05);
@@ -334,7 +334,7 @@ section#productContainer {
 section#productDescription {
    background-color: var(--white);
    overflow: hidden;
-   box-shadow: var(--shaddow1);
+   box-shadow: var(--shadow1);
    border-radius: 10px;
    -webkit-border-radius: 10px;
    -moz-border-radius: 10px;
@@ -347,7 +347,7 @@ section#productDescription {
    gap: var(--s2);
    height: 68px;
    padding: 0 var(--s2);
-   box-shadow: var(--shaddow1);
+   box-shadow: var(--shadow1);
 }
 
 #descriptionHeading div {
@@ -421,7 +421,7 @@ section#reviews {
    color: var(--primary);
    border: 0;
    padding: var(--s0);
-   box-shadow: var(--shaddow1);
+   box-shadow: var(--shadow1);
    border-radius: 100px;
    -webkit-border-radius: 100px;
    -moz-border-radius: 100px;
@@ -437,7 +437,7 @@ section#reviews {
 }
 
 .sortButton:hover {
-   box-shadow: var(--shaddow2);
+   box-shadow: var(--shadow2);
    background-color: var(--primary);
    color: var(--white);
 }
@@ -445,7 +445,7 @@ section#reviews {
 
 .reviewContainer {
    background-color: white;
-   box-shadow: var(--shaddow1);
+   box-shadow: var(--shadow1);
    padding: var(--s2);
    border-radius: 10px;
    -webkit-border-radius: 10px;
@@ -498,7 +498,7 @@ section#reviews {
    -moz-border-radius: 100px;
    -ms-border-radius: 100px;
    -o-border-radius: 100px;
-   box-shadow: var(--shaddow1);
+   box-shadow: var(--shadow1);
 }
 .reviewFeedback #yesButton {
    color: var(--white);

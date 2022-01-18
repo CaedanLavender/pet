@@ -117,7 +117,7 @@ aside#goFetch {
   width: 240px;
   height: 304px;
   background-color: var(--white);
-  box-shadow: var(--shaddow1);
+  box-shadow: var(--shadow1);
   border-radius: 10px;
   margin-bottom: 60px;
   display: flex;
